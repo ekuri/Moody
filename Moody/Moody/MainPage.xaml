@@ -24,6 +24,10 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
-        <Image HorizontalAlignment="Left" Height="500" Margin="435,64,0,0" VerticalAlignment="Top" Width="500" Source="Assets/mood_ball_plain.png"/>
+        <Image x:Name="moodBall" HorizontalAlignment="Left" Height="500" Margin="669,49,0,0" VerticalAlignment="Top" Width="500" Source="Assets/mood_ball.png"/>
+        <Slider x:Name="temp" HorizontalAlignment="Left" Margin="1045,32,0,0" VerticalAlignment="Top" Width="282"/>
+        <Ellipse x:Name="colorEllipse" HorizontalAlignment="Left" Height="437" Margin="699,72,0,0" Stroke="Black" VerticalAlignment="Top" Width="441" StrokeThickness="0"/>
+        <Frame x:Name="upperBallFrame" Content="" HorizontalAlignment="Left" Margin="669,49,0,0" VerticalAlignment="Top" Height="241" Width="484" PointerPressed="onUpperBall_PointerPressed" Background="Black" Opacity="0" PointerReleased="onUpperOrLowerBall_PointerReleased"/>
+        <Frame x:Name="lowerBallFrame" Content="" HorizontalAlignment="Left" Margin="669,290,0,0" VerticalAlignment="Top" Height="259" Width="484" Foreground="{x:Null}" PointerPressed="onLowerBall_PointerPressed" Background="Black" Opacity="0" PointerReleased="onUpperOrLowerBall_PointerReleased"/>
     </Grid>
 </Page>
