@@ -6,6 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <MenuFlyout x:Key="userStateSelector">
+            <MenuFlyoutItem Text="注销" FontSize="22" Width="150" Background="#FF4FA39B" Margin="-10"/>
+        </MenuFlyout>
+    </Page.Resources>
     <Page.TopAppBar>
         <AppBar>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
@@ -17,7 +22,7 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="DeepSkyBlue" Offset="0"/>
+                <GradientStop Color="CadetBlue" Offset="0"/>
                 <GradientStop Color="#FF00BF88" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
@@ -32,9 +37,10 @@
             </GridView.ItemTemplate>
         </GridView>
         <Image x:Name="moodBall" HorizontalAlignment="Left" Height="500" Margin="669,49,0,0" VerticalAlignment="Top" Width="500" Source="Assets/mood_ball_plain.png"/>
-        <Slider x:Name="temp" HorizontalAlignment="Left" Margin="1045,32,0,0" VerticalAlignment="Top" Width="282"/>
+        <Slider x:Name="temp" HorizontalAlignment="Left" Margin="1008,515,0,0" VerticalAlignment="Top" Width="282"/>
         <Ellipse x:Name="colorEllipse" HorizontalAlignment="Left" Height="437" Margin="699,72,0,0" Stroke="Black" VerticalAlignment="Top" Width="441" StrokeThickness="0"/>
         <Frame x:Name="upperBallFrame" Content="" HorizontalAlignment="Left" Margin="669,49,0,0" VerticalAlignment="Top" Height="241" Width="484" PointerPressed="onUpperBall_PointerPressed" Background="Black" Opacity="0" PointerReleased="onUpperOrLowerBall_PointerReleased"/>
         <Frame x:Name="lowerBallFrame" Content="" HorizontalAlignment="Left" Margin="669,290,0,0" VerticalAlignment="Top" Height="259" Width="484" Foreground="{x:Null}" PointerPressed="onLowerBall_PointerPressed" Background="Black" Opacity="0" PointerReleased="onUpperOrLowerBall_PointerReleased"/>
+        <Button Content="Ekuri" HorizontalAlignment="Left" Margin="1171,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.062,-0.5" Height="65" Width="154" BorderThickness="0" FontSize="24" Flyout="{StaticResource userStateSelector}"/>
     </Grid>
 </Page>

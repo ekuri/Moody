@@ -31,7 +31,16 @@ namespace Moody
         };
 
         List<User> allUser = new List<User>() {
-            new User("ekuri", "Assets/mood_ball.png"),
+            new User("ekuri", "Assets/portrait/1.jpeg"),
+            new User("ekuri1", "Assets/portrait/2.jpg"),
+            new User("ekuri2", "Assets/portrait/3.jpg"),
+            new User("ekuri3", "Assets/portrait/4.jpeg"),
+            new User("ekuri4", "Assets/portrait/5.jpg"),
+            new User("ekuri5", "Assets/portrait/6.jpg"),
+            new User("ekuri6", "Assets/portrait/7.jpg"),
+            new User("ekuri7", "Assets/portrait/8.jpg"),
+            new User("ekuri8", "Assets/portrait/9.jpg"),
+            new User("ekuri9", "Assets/portrait/10.jpg"),
         };
 
         public Statistics()
@@ -40,6 +49,16 @@ namespace Moody
             moodStatisticListView.ItemsSource = allMoodRecord;
             moodStatisticListView.SelectionMode = ListViewSelectionMode.None;
             friendListView.ItemsSource = allUser;
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void friendListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

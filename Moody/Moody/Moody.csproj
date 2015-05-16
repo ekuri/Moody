@@ -111,11 +111,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Login.xaml.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mood.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sign.xaml.cs" />
     <Compile Include="SimgleMoodRecord.cs" />
     <Compile Include="Statistics.xaml.cs">
       <DependentUpon>Statistics.xaml</DependentUpon>
@@ -129,6 +131,16 @@
     <None Include="Moody_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\portrait\1.jpeg" />
+    <Content Include="Assets\portrait\10.jpg" />
+    <Content Include="Assets\portrait\2.jpg" />
+    <Content Include="Assets\portrait\3.jpg" />
+    <Content Include="Assets\portrait\4.jpeg" />
+    <Content Include="Assets\portrait\5.jpg" />
+    <Content Include="Assets\portrait\6.jpg" />
+    <Content Include="Assets\portrait\7.jpg" />
+    <Content Include="Assets\portrait\8.jpg" />
+    <Content Include="Assets\portrait\9.jpg" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\Mood\3d_funny.png" />
     <Content Include="Assets\Mood\3d_shock.png" />
@@ -150,6 +162,7 @@
     <Content Include="Assets\Mood\very_sad.png" />
     <Content Include="Assets\mood_ball.png" />
     <Content Include="Assets\mood_ball_plain.png" />
+    <Content Include="Assets\quit.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
@@ -159,7 +172,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sign.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -168,6 +189,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

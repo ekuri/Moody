@@ -6,28 +6,35 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.TopAppBar>
+        <AppBar>
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton Icon="Back" Click="AppBarButton_Click" VerticalAlignment="Center"></AppBarButton>
+            </StackPanel>
+        </AppBar>
+    </Page.TopAppBar>
 
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="DeepSkyBlue" Offset="0"/>
-                <GradientStop Color="#FF8888FF" Offset="1"/>
+                <GradientStop Color="CadetBlue" Offset="0"/>
+                <GradientStop Color="#FF00BF88" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <ListView x:Name="moodStatisticListView" HorizontalAlignment="Left" Height="481" Margin="117,87,0,0" VerticalAlignment="Top" Width="787" d:IsLocked="True">
+        <ListView x:Name="moodStatisticListView" HorizontalAlignment="Left" Height="628" Margin="117,87,0,0" VerticalAlignment="Top" Width="787" d:IsLocked="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Height="60" HorizontalAlignment="Left" VerticalAlignment="Center">
                         <TextBlock Text="{Binding dateTime}" FontSize="20" Height="30" VerticalAlignment="Center" ></TextBlock>
                         <Rectangle Width="5"></Rectangle>
-                        <Rectangle Width="{Binding moodScore}" Fill="Gray" Height="50" VerticalAlignment="Center"></Rectangle>
+                        <Rectangle Width="{Binding moodScore}" Fill="SkyBlue" Height="50" VerticalAlignment="Center"></Rectangle>
                         <Rectangle Width="10"></Rectangle>
                         <Image Source="{Binding moodImage}" Height="50" VerticalAlignment="Center"></Image>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ListView x:Name="friendListView" HorizontalAlignment="Left" Height="481" Margin="954,87,0,0" VerticalAlignment="Top" Width="319">
+        <ListView x:Name="friendListView" HorizontalAlignment="Left" Height="628" Margin="980,87,0,0" VerticalAlignment="Top" Width="350" d:IsLocked="True" ItemClick="friendListView_ItemClick" IsItemClickEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Height="70">
@@ -37,5 +44,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <ComboBox HorizontalAlignment="Left" Margin="60,30,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="一个星期"/>
+            <ComboBoxItem Content="一个月"/>
+            <ComboBoxItem Content="一年"/>
+        </ComboBox>
     </Grid>
 </Page>

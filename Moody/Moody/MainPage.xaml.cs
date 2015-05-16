@@ -26,15 +26,18 @@ namespace Moody
     {
         List<Mood> allMood = new List<Mood>() {
             new Mood("Funny", "Assets/Mood/3d_funny.png"),
-            new Mood("Shock", "Assets/Mood/3d_shock.png"),
+            new Mood("Delighted", "Assets/Mood/delighted.png"),
+            new Mood("Very Delighted", "Assets/Mood/very_delighted.png"),
+            new Mood("Excited", "Assets/Mood/excited.png"),
+            new Mood("Extremely Happy", "Assets/Mood/extremely_happy.png"),
+            new Mood("Laugh", "Assets/Mood/laugh.png"),
+            new Mood("A little Shock", "Assets/Mood/3d_shock.png"),
+            new Mood("Shock", "Assets/Mood/shock.png"),
+            new Mood("Angry", "Assets/Mood/angry.png"),
             new Mood("A Little Sad", "Assets/Mood/a_little_sad.png"),
-            new Mood("", "Assets/3d_funny.png"),
-            new Mood("", "Assets/3d_funny.png"),
-            new Mood("", "Assets/3d_funny.png"),
-            new Mood("", "Assets/3d_funny.png"),
-            new Mood("", "Assets/3d_funny.png"),
-            new Mood("", "Assets/3d_funny.png"),
-            new Mood("", "Assets/3d_funny.png"),
+            new Mood("Sad", "Assets/Mood/sad.png"),
+            new Mood("Very Sad", "Assets/Mood/very_sad.png"),
+            new Mood("Cry", "Assets/Mood/cry.png"),
         };
 
         Point moodBallCenter;
