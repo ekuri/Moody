@@ -46,12 +46,14 @@ namespace Moody
         // 设置统计图表数据
         void setStatisticData(List<SingleMoodRecord> record)
         {
+            allMoodRecord = record;
             moodStatisticListView.ItemsSource = record;
         }
 
         // 设置用户列表数据
         void setFriendListViewData(List<User> allfriend)
         {
+            allUser = allfriend;
             friendListView.ItemsSource = allfriend;
         }
 
@@ -72,11 +74,12 @@ namespace Moody
         private void friendListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             friendListView.SelectedItem = e.ClickedItem;
+            int index = friendListView.Items.IndexOf(e.ClickedItem);
+            notifyUserSelectedChanged(allUser[index]);
         }
 
         private void foretimeSelectComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
             if (foretimeSelectComboBox != null) {
                 int index;
                 index = foretimeSelectComboBox.SelectedIndex;
@@ -93,6 +96,12 @@ namespace Moody
 
         // 用户选择统计时间变更
         private void notifyStatisticsDataWithTime(TimeSpan timeSpan)
+        {
+
+        }
+
+        // 当前选中用户变更, 此时应该按照当前选择的时间限更改统计数据
+        private void notifyUserSelectedChanged(User selectedUser)
         {
 
         }
