@@ -19,5 +19,6 @@
         <TextBlock x:Name="signbutton" HorizontalAlignment="Left" Height="19" Margin="502,688,0,0" TextWrapping="Wrap" Text="账号注册" VerticalAlignment="Top" Width="86" FontSize="19" PointerPressed="goto_signup"/>
         <TextBlock HorizontalAlignment="Left" Height="19" Margin="791,688,0,0" TextWrapping="Wrap" Text="忘记密码？" VerticalAlignment="Top" Width="95" FontSize="19"/>
         <TextBlock HorizontalAlignment="Left" Height="176" Margin="361,205,0,0" TextWrapping="Wrap" Text="D" VerticalAlignment="Top" Width="155" FontSize="190"/>
+        <ProgressRing x:Name="progressRing" HorizontalAlignment="Left" Margin="920,333,0,0" VerticalAlignment="Top" Height="60" Width="60" Foreground="White"/>
     </Grid>
 </Page>

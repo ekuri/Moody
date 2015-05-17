@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI;
+using Windows.UI.Popups;
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
 namespace Moody
@@ -73,7 +74,25 @@ namespace Moody
 
         private void pass_KeyUp(object sender, KeyRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
+            if (e.Key == Windows.System.VirtualKey.Enter)
+            {
+                progressRing.IsActive = true;
+                login(true);
+            }
+        }
+
+        // 登陆结果回调函数
+        private async void login(bool state)
+        {
+            if (state)
+            {
+                this.Frame.Navigate(typeof(MainPage));
+            }
+            else
+            {
+                MessageDialog errorShow = new MessageDialog("请检查键盘大小写再重试一次", "用户名或密码错误");
+                await errorShow.ShowAsync();
+            }
         }
     }
 }

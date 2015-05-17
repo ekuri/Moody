@@ -14,13 +14,14 @@
                 <GradientStop Color="#FF00BF88" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBox x:Name="mail" HorizontalAlignment="Left" Height="48" Margin="533,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" FontSize="25" GotFocus="mail_gf" LostFocus="mail_lf" Text="邮箱" Foreground="Gray"/>
-        <TextBox x:Name="pass" HorizontalAlignment="Left" Height="48" Margin="533,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" FontSize="25" GotFocus="pass_gf" LostFocus="pass_lf" Text="密码" Foreground="Gray"/>
-        <TextBox x:Name="passconfirm" HorizontalAlignment="Left" Height="48" Margin="533,413,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" FontSize="25" GotFocus="passconfirm_gf" LostFocus="passconfirm_lf" Text="确认密码" Foreground="Gray"/>
-        <TextBox x:Name="name" HorizontalAlignment="Left" Height="48" Margin="533,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" FontSize="25" GotFocus="name_gf" LostFocus="name_lf" Text="用户名" Foreground="Gray"/>
-        <Button Content="注册" HorizontalAlignment="Left" Height="60" Margin="614,540,0,0" VerticalAlignment="Top" Width="135" FontSize="24" Foreground="Black" Click="Button_Click"/>
+        <TextBox x:Name="name" HorizontalAlignment="Left" Height="48" Margin="475,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445" FontSize="25" GotFocus="name_gf" LostFocus="name_lf" Text="用户名" Foreground="Gray"/>
+        <TextBox x:Name="mail" HorizontalAlignment="Left" Height="48" Margin="475,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445" FontSize="25" GotFocus="mail_gf" LostFocus="mail_lf" Text="邮箱" Foreground="Gray"/>
+        <TextBox x:Name="pass" HorizontalAlignment="Left" Height="48" Margin="475,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445" FontSize="25" GotFocus="pass_gf" LostFocus="pass_lf" Text="密码" Foreground="Gray"/>
+        <TextBox x:Name="passconfirm" HorizontalAlignment="Left" Height="48" Margin="475,413,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445" FontSize="25" GotFocus="passconfirm_gf" LostFocus="passconfirm_lf" Text="确认密码" Foreground="Gray"/>
+        <Button Content="注册" HorizontalAlignment="Left" Height="60" Margin="571,502,0,0" VerticalAlignment="Top" Width="216" FontSize="24" Foreground="Black" Click="Button_Click" BorderThickness="1"/>
         <Image HorizontalAlignment="Left" Height="48" Margin="1244,34,0,0" VerticalAlignment="Top" Width="56" Source="Assets/quit.png" PointerPressed="goback_login"/>
         <TextBlock HorizontalAlignment="Left" Height="192" Margin="574,34,0,0" TextWrapping="Wrap" Text="M" VerticalAlignment="Top" Width="210" FontSize="190"/>
         <TextBlock HorizontalAlignment="Left" Height="176" Margin="700,34,0,0" TextWrapping="Wrap" Text="D" VerticalAlignment="Top" Width="131" FontSize="190"/>
+        <ProgressRing x:Name="progressRing" HorizontalAlignment="Left" Margin="970,335,0,0" VerticalAlignment="Top" Height="60" Width="60" Foreground="White"/>
     </Grid>
 </Page>

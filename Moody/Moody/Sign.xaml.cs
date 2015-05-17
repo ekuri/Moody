@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI;
+using Windows.UI.Popups;
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
 namespace Moody
@@ -93,11 +94,26 @@ namespace Moody
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Login));
+            progressRing.IsActive = true;
+            register(false);
+            
         }
         public void goback_login(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Login));
+        }
+
+        // 注册结果回调函数
+        private async void register(bool state) {
+            if (state)
+            {
+                this.Frame.Navigate(typeof(Login));
+            }
+            else
+            {
+                MessageDialog errorShow = new MessageDialog("用户名已存在或其他错误", "注册失败");
+                await errorShow.ShowAsync();
+            }
         }
     }
 }
