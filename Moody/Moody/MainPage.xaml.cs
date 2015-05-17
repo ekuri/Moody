@@ -40,7 +40,6 @@ namespace Moody
             new Mood("Cry", "Assets/Mood/cry.png"),
         };
 
-        DispatcherTimer timer;
         DispatcherTimer moodImageChangeAnimationTimer;
 
         public MainPage()
@@ -63,44 +62,6 @@ namespace Moody
                 moodShowImage7.Source = new BitmapImage(new Uri("ms-appx:///" + newMood));
         }
 
-        private void onUpperBall_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
-            timer.Tick += new EventHandler<object>(incTempValue);
-            timer.Start();
-        }
-
-
-
-        private void onLowerBall_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
-            timer.Tick += new EventHandler<object>(decTempValue);
-            timer.Start();
-        }
-
-        void incTempValue(object sender, object e)
-        {
-            if (temp.Value < 100)
-            {
-                temp.Value = temp.Value + 1;
-                moodBall.Opacity += 0.01;
-            }
-        }
-
-        void decTempValue(object sender, object e)
-        {
-            if (temp.Value > 0)
-                temp.Value = temp.Value - 1;
-        }
-
-        private void onUpperOrLowerBall_PointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            timer.Stop();
-        }
-
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Statistics));
@@ -114,9 +75,29 @@ namespace Moody
         private void moodSelector_ItemClick(object sender, ItemClickEventArgs e)
         {
             int index = moodSelector.Items.IndexOf(e.ClickedItem);
-            setMoodsShowPushOneByOne(allMood[index].src);
+            
+            // 当前心情有十三种,所以分数为100 - 7 * index
+            addNewMood(new SingleMoodRecord(DateTime.Today.ToString(), 100 - (7 * index), allMood[index].src));
         }
 
+        /// <summary>
+        ///  添加心情
+        /// </summary>
+        /// <param name="mood"></param>
+        private void addNewMood(SingleMoodRecord mood)
+        {
+            setMoodsShowPushOneByOne(mood.moodImage);
+        }
 
+        // 心情描述输入
+        private void inputTextBox_KeyUp(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter)
+            {
+                inputTextBox.Text += "\n";
+                inputTextBox.SelectionStart = inputTextBox.Text.Length;
+            }
+            
+        }
     }
 }

@@ -11,12 +11,14 @@ namespace Moody
         public string dateTime { set; get; }
         public int moodScore { set; get; }
         public string moodImage { set; get; }
+        public string moodDescription { set; get; }
 
-        public SingleMoodRecord(string dateTime, int moodScore, string moodImage)
+        public SingleMoodRecord(string dateTime, int moodScore, string moodImage, string moodDescription = "")
         {
             this.dateTime = dateTime;
             this.moodScore = moodScore;
             this.moodImage = moodImage;
+            this.moodDescription = moodDescription;
         }
     }
 }
