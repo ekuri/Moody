@@ -22,33 +22,46 @@ namespace Moody
     /// </summary>
     public sealed partial class Statistics : Page
     {
-        List<SimgleMoodRecord> allMoodRecord = new List<SimgleMoodRecord>() {
-            new SimgleMoodRecord("2015-03-01", 300, "Assets/mood_ball.png"),
-            new SimgleMoodRecord("2015-03-01", 400, "Assets/mood_ball.png"),
-            new SimgleMoodRecord("2015-03-01", 100, "Assets/mood_ball.png"),
-            new SimgleMoodRecord("2015-03-01", 50, "Assets/mood_ball.png"),
-            new SimgleMoodRecord("2015-03-01", 300, "Assets/mood_ball.png"),
+        List<SingleMoodRecord> allMoodRecord = new List<SingleMoodRecord>() {
+            new SingleMoodRecord("2015-03-01", 300, "Assets/mood_ball.png"),
+            new SingleMoodRecord("2015-03-01", 400, "Assets/mood_ball.png"),
+            new SingleMoodRecord("2015-03-01", 100, "Assets/mood_ball.png"),
+            new SingleMoodRecord("2015-03-01", 50, "Assets/mood_ball.png"),
+            new SingleMoodRecord("2015-03-01", 300, "Assets/mood_ball.png"),
         };
 
         List<User> allUser = new List<User>() {
-            new User("ekuri", "Assets/portrait/1.jpeg"),
-            new User("ekuri1", "Assets/portrait/2.jpg"),
-            new User("ekuri2", "Assets/portrait/3.jpg"),
-            new User("ekuri3", "Assets/portrait/4.jpeg"),
-            new User("ekuri4", "Assets/portrait/5.jpg"),
-            new User("ekuri5", "Assets/portrait/6.jpg"),
-            new User("ekuri6", "Assets/portrait/7.jpg"),
-            new User("ekuri7", "Assets/portrait/8.jpg"),
-            new User("ekuri8", "Assets/portrait/9.jpg"),
-            new User("ekuri9", "Assets/portrait/10.jpg"),
+            new User("ekuri", "Assets/portrait/pic001.jpeg", "Happy every day"),
+            new User("ekuri1", "Assets/portrait/pic002.jpg"),
+            new User("ekuri2", "Assets/portrait/pic003.jpg"),
+            new User("ekuri3", "Assets/portrait/pic004.jpeg"),
+            new User("ekuri4", "Assets/portrait/pic005.jpg"),
+            new User("ekuri5", "Assets/portrait/pic006.jpg"),
+            new User("ekuri6", "Assets/portrait/pic007.jpg"),
+            new User("ekuri7", "Assets/portrait/pic008.jpg"),
+            new User("ekuri8", "Assets/portrait/pic009.jpg"),
+            new User("ekuri9", "Assets/portrait/pic010.jpg"),
         };
+
+        // 设置统计图表数据
+        void setStatisticData(List<SingleMoodRecord> record)
+        {
+            moodStatisticListView.ItemsSource = record;
+        }
+
+        // 设置用户列表数据
+        void setFriendListViewData(List<User> allfriend)
+        {
+            friendListView.ItemsSource = allfriend;
+        }
 
         public Statistics()
         {
             this.InitializeComponent();
-            moodStatisticListView.ItemsSource = allMoodRecord;
             moodStatisticListView.SelectionMode = ListViewSelectionMode.None;
-            friendListView.ItemsSource = allUser;
+
+            setFriendListViewData(allUser);
+            setStatisticData(allMoodRecord);
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
@@ -57,6 +70,29 @@ namespace Moody
         }
 
         private void friendListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            friendListView.SelectedItem = e.ClickedItem;
+        }
+
+        private void foretimeSelectComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+            if (foretimeSelectComboBox != null) {
+                int index;
+                index = foretimeSelectComboBox.SelectedIndex;
+                if (index == 0)
+                    notifyStatisticsDataWithTime(new TimeSpan(7, 0, 0, 0));
+                else if (index == 1)
+                    notifyStatisticsDataWithTime(new TimeSpan(30, 0, 0, 0));
+                else if (index == 2)
+                    notifyStatisticsDataWithTime(new TimeSpan(90, 0, 0, 0));
+                else if (index == 3)
+                    notifyStatisticsDataWithTime(new TimeSpan(365, 0, 0, 0));
+            }
+        }
+
+        // 用户选择统计时间变更
+        private void notifyStatisticsDataWithTime(TimeSpan timeSpan)
         {
 
         }

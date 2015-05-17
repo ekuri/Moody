@@ -39,14 +39,18 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Height="70">
                         <Image Source="{Binding portrait}" Height="60" Margin="5"></Image>
-                        <TextBlock Text="{Binding name}" Height="60" Margin="5" FontSize="20"></TextBlock>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding name}" Height="30" Margin="5, 0, 0, 5" FontSize="24" Foreground="WhiteSmoke" FontWeight="SemiBold"></TextBlock>
+                            <TextBlock Text="{Binding sign}" Height="30" Margin="5, 0, 0, 5" FontSize="16" Foreground="LightGray"></TextBlock>
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ComboBox HorizontalAlignment="Left" Margin="60,30,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+        <ComboBox x:Name="foretimeSelectComboBox" HorizontalAlignment="Left" Margin="60,30,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" SelectionChanged="foretimeSelectComboBox_SelectionChanged">
             <ComboBoxItem Content="一个星期"/>
-            <ComboBoxItem Content="一个月"/>
+            <ComboBoxItem Content="30天"></ComboBoxItem>
+            <ComboBoxItem Content="90天"></ComboBoxItem>
             <ComboBoxItem Content="一年"/>
         </ComboBox>
     </Grid>

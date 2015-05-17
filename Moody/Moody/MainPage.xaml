@@ -8,7 +8,7 @@
     mc:Ignorable="d">
     <Page.Resources>
         <MenuFlyout x:Key="userStateSelector">
-            <MenuFlyoutItem Text="注销" FontSize="22" Width="150" Background="#FF4FA39B" Margin="-10"/>
+            <MenuFlyoutItem x:Name="signout" Text="注销" FontSize="22" Width="150" Background="#FF4FA39B" Margin="-10" Click="signout_Click"/>
         </MenuFlyout>
     </Page.Resources>
     <Page.TopAppBar>
@@ -26,7 +26,7 @@
                 <GradientStop Color="#FF00BF88" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <GridView x:Name="moodSelector" HorizontalAlignment="Left" Height="168" Margin="10,610,0,0" VerticalAlignment="Top" Width="1346" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+        <GridView x:Name="moodSelector" HorizontalAlignment="Left" Height="168" Margin="10,590,0,0" VerticalAlignment="Top" Width="1346" ScrollViewer.HorizontalScrollBarVisibility="Hidden" d:IsLocked="True" IsItemClickEnabled="True" ItemClick="moodSelector_ItemClick">
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Height="168">
@@ -36,11 +36,18 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
-        <Image x:Name="moodBall" HorizontalAlignment="Left" Height="500" Margin="669,49,0,0" VerticalAlignment="Top" Width="500" Source="Assets/mood_ball_plain.png"/>
-        <Slider x:Name="temp" HorizontalAlignment="Left" Margin="1008,515,0,0" VerticalAlignment="Top" Width="282"/>
-        <Ellipse x:Name="colorEllipse" HorizontalAlignment="Left" Height="437" Margin="699,72,0,0" Stroke="Black" VerticalAlignment="Top" Width="441" StrokeThickness="0"/>
-        <Frame x:Name="upperBallFrame" Content="" HorizontalAlignment="Left" Margin="669,49,0,0" VerticalAlignment="Top" Height="241" Width="484" PointerPressed="onUpperBall_PointerPressed" Background="Black" Opacity="0" PointerReleased="onUpperOrLowerBall_PointerReleased"/>
-        <Frame x:Name="lowerBallFrame" Content="" HorizontalAlignment="Left" Margin="669,290,0,0" VerticalAlignment="Top" Height="259" Width="484" Foreground="{x:Null}" PointerPressed="onLowerBall_PointerPressed" Background="Black" Opacity="0" PointerReleased="onUpperOrLowerBall_PointerReleased"/>
-        <Button Content="Ekuri" HorizontalAlignment="Left" Margin="1171,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.062,-0.5" Height="65" Width="154" BorderThickness="0" FontSize="24" Flyout="{StaticResource userStateSelector}"/>
+        <Image x:Name="moodBall" HorizontalAlignment="Left" Height="500" Margin="766,75,0,0" VerticalAlignment="Top" Width="500" Source="Assets/mood_ball_plain.png" d:IsLocked="True"/>
+        <Slider x:Name="temp" HorizontalAlignment="Left" Margin="1008,515,0,0" VerticalAlignment="Top" Width="282" d:IsLocked="True"/>
+        <Ellipse x:Name="colorEllipse" HorizontalAlignment="Left" Height="437" Margin="796,98,0,0" Stroke="Black" VerticalAlignment="Top" Width="441" StrokeThickness="0" d:IsLocked="True"/>
+        <Frame x:Name="upperBallFrame" Content="" HorizontalAlignment="Left" Margin="766,75,0,0" VerticalAlignment="Top" Height="241" Width="484" PointerPressed="onUpperBall_PointerPressed" Background="Black" Opacity="0" PointerReleased="onUpperOrLowerBall_PointerReleased" d:IsLocked="True"/>
+        <Frame x:Name="lowerBallFrame" Content="" HorizontalAlignment="Left" Margin="766,316,0,0" VerticalAlignment="Top" Height="259" Width="484" Foreground="{x:Null}" PointerPressed="onLowerBall_PointerPressed" Background="Black" Opacity="0" PointerReleased="onUpperOrLowerBall_PointerReleased" d:IsLocked="True"/>
+        <Button Content="Ekuri" HorizontalAlignment="Left" Margin="56,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.062,-0.5" Height="65" Width="154" BorderThickness="0" FontSize="24" Flyout="{StaticResource userStateSelector}" d:IsLocked="True"/>
+        <Image x:Name="moodShowImage1" HorizontalAlignment="Left" Height="64" Margin="236,68,0,0" VerticalAlignment="Top" Width="64"/>
+        <Image x:Name="moodShowImage2" HorizontalAlignment="Left" Height="96" Margin="340,24,0,0" VerticalAlignment="Top" Width="96"/>
+        <Image x:Name="moodShowImage3" HorizontalAlignment="Left" Height="128" Margin="495,10,0,0" VerticalAlignment="Top" Width="128" RenderTransformOrigin="1.172,0.094"/>
+        <Image x:Name="moodShowImage4" HorizontalAlignment="Left" Height="160" Margin="623,75,0,0" VerticalAlignment="Top" Width="160"/>
+        <Image x:Name="moodShowImage5" HorizontalAlignment="Left" Height="192" Margin="556,265,0,0" VerticalAlignment="Top" Width="192" RenderTransformOrigin="0.755,0.182"/>
+        <Image x:Name="moodShowImage6" HorizontalAlignment="Left" Height="256" Margin="280,316,0,0" VerticalAlignment="Top" Width="256"/>
+        <Image x:Name="moodShowImage7" HorizontalAlignment="Left" Height="320" Margin="0,132,0,0" VerticalAlignment="Top" Width="320" RenderTransformOrigin="-0.2,0.45"/>
     </Grid>
 </Page>

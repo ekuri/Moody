@@ -12,8 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Media.Imaging;
 //using System.Threading;
-using System;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -40,20 +40,31 @@ namespace Moody
             new Mood("Cry", "Assets/Mood/cry.png"),
         };
 
-        Point moodBallCenter;
         DispatcherTimer timer;
+        DispatcherTimer moodImageChangeAnimationTimer;
 
         public MainPage()
         {
             this.InitializeComponent();
             this.moodSelector.ItemsSource = this.allMood;
-            moodBall.Opacity = 0.5;
-            //moodBallCenter = moodBall.Margin.
+            moodImageChangeAnimationTimer = new DispatcherTimer();
+            moodImageChangeAnimationTimer.Interval = new System.TimeSpan(0, 0, 0, 0, 500);
+
+        }
+
+        private void setMoodsShowPushOneByOne(string newMood)
+        {
+                moodShowImage1.Source = moodShowImage2.Source;
+                moodShowImage2.Source = moodShowImage3.Source;
+                moodShowImage3.Source = moodShowImage4.Source;
+                moodShowImage4.Source = moodShowImage5.Source;
+                moodShowImage5.Source = moodShowImage6.Source;
+                moodShowImage6.Source = moodShowImage7.Source;
+                moodShowImage7.Source = new BitmapImage(new Uri("ms-appx:///" + newMood));
         }
 
         private void onUpperBall_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timer.Tick += new EventHandler<object>(incTempValue);
@@ -93,6 +104,17 @@ namespace Moody
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Statistics));
+        }
+
+        private void signout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Login));
+        }
+
+        private void moodSelector_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int index = moodSelector.Items.IndexOf(e.ClickedItem);
+            setMoodsShowPushOneByOne(allMood[index].src);
         }
 
 

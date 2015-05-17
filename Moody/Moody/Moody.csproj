@@ -131,16 +131,6 @@
     <None Include="Moody_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\portrait\1.jpeg" />
-    <Content Include="Assets\portrait\10.jpg" />
-    <Content Include="Assets\portrait\2.jpg" />
-    <Content Include="Assets\portrait\3.jpg" />
-    <Content Include="Assets\portrait\4.jpeg" />
-    <Content Include="Assets\portrait\5.jpg" />
-    <Content Include="Assets\portrait\6.jpg" />
-    <Content Include="Assets\portrait\7.jpg" />
-    <Content Include="Assets\portrait\8.jpg" />
-    <Content Include="Assets\portrait\9.jpg" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\Mood\3d_funny.png" />
     <Content Include="Assets\Mood\3d_shock.png" />
@@ -162,6 +152,16 @@
     <Content Include="Assets\Mood\very_sad.png" />
     <Content Include="Assets\mood_ball.png" />
     <Content Include="Assets\mood_ball_plain.png" />
+    <Content Include="Assets\portrait\pic001.jpeg" />
+    <Content Include="Assets\portrait\pic002.jpg" />
+    <Content Include="Assets\portrait\pic003.jpg" />
+    <Content Include="Assets\portrait\pic004.jpeg" />
+    <Content Include="Assets\portrait\pic005.jpg" />
+    <Content Include="Assets\portrait\pic006.jpg" />
+    <Content Include="Assets\portrait\pic007.jpg" />
+    <Content Include="Assets\portrait\pic008.jpg" />
+    <Content Include="Assets\portrait\pic009.jpg" />
+    <Content Include="Assets\portrait\pic010.jpg" />
     <Content Include="Assets\quit.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />

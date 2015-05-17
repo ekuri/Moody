@@ -63,7 +63,15 @@ namespace Moody
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void name_KeyUp(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter)
+            {
+                pass.Focus(FocusState.Keyboard);
+            }
+        }
+
+        private void pass_KeyUp(object sender, KeyRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
         }
